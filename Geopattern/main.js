@@ -41,5 +41,12 @@ function draw() {
     rVal = rVal - 2;
     gVal = gVal + 7;
     bVal = bVal + 3;
+    
+    function keyPressed() {
+      if (keyCode === 115 || keyCode === 83) {
+        savecanvas('geometricPattern', 'png');
+      }
+      return false;
+    }
   }
 }
