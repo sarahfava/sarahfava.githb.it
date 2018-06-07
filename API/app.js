@@ -1,3 +1,5 @@
+
+
 function loadDate() {
     var currentDate = new Date();
     var dateString = currentDate.toString()
@@ -11,14 +13,13 @@ function loadDate() {
 function loadWeather(){
     var weather = $("#weather");
     var ur1 = "https://api.forecast.io/forecast/";
-    var apiKey = "YOUR API KEY";
+    var apiKey = "5530eb992f16ca7992b0c543782107e5";
     
 function success(position) {
         var latitude = position.coords.latitude;
         var longitude = position.coords.longitude;
         
-        
-        $.getJSON(url + apiKey + "/" + latitude + "," + longitude + "?units=si&callback=?", function(data) {
+ $.getJSON(url + apiKey + "/" + latitude + "," + longitude + "?units=si&callback=?", function(data) {
          weather.text("Based on your apparent location, it is " + data.currently.temperature + "° C right now");
         });
       }
@@ -37,7 +38,7 @@ function error() {
 function loadNews(){
     var news = $("#news");
     var url = "https://newsapi.org/v1/articles?source=google-news&sortBy=top&apiKey=";
-    var apiKey = "YOUR API KEY";
+    var apiKey = "526f6f173ab84a02b92f7c2db191744d";
     
     $.getJSON(url + apiKey, function(data) {
         
@@ -53,4 +54,6 @@ function loadNews(){
 loadDate();
 loadWeather();
 loadNews();
+
+
     
